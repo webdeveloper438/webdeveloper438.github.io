@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vocabulary Trainer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body onload="displayVocabulary();">
+    <h1>Vocabulary Trainer</h1>
+    <form id="vocab-form">
+      <input
+        type="text"
+        id="vocab-input"
+        placeholder="Enter a vocabulary word"
+      />
+      <input
+        type="text"
+        id="translation-input"
+        placeholder="Enter its translation"
+      />
+      <button type="submit">Add Vocabulary</button>
+    </form>
+    <h2>Saved Vocabulary</h2>
+    <ul id="vocab-list"></ul>
+    <hr />
+    <div id="test-area">
+      <button id="start-test">Start Test</button>
+      <h2 id="question"></h2>
+      <input type="text" id="answer-input" />
+      <button id="submit-answer">Submit Answer</button>
+      <button id="next-question">Next Question</button>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
