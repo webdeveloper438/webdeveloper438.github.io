@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vokabeltrainer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h1 {
+      text-align: center;
+    }
+    .vokabel {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 20px 0;
+    }
+    .vokabel input {
+      flex-grow: 1;
+      margin-right: 10px;
+    }
+    .vokabel button {
+      background-color: blue;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+    }
+    .vokabel button:hover {
+      background-color: darkblue;
+    }
+    .result {
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Vokabeltrainer</h1>
+  <div id="vokabel-container"></div>
+  <div class="result"></div>
+  <button onclick="test()">Test</button>
+  <script>
+    const vokabelContainer = document.getElementById('vokabel-container');
+    const result = document.querySelector('.result');
+
+    function loadVokabeln() {
+      return fetch('vokabeln.json')
+        .then(response => response.json())
+        .then(vokabeln => vokabeln);
+    }
+
+    let currentVokabel = {};
+
+    function showVokabel() {
+      const vokabelDeutsch = document.createElement('div');
+      vokabelDeutsch.textContent = currentVokabel.deutsch;
+      vokabelDeutsch.classList.add('vokabel');
+
+      const input = document.createElement('input');
+      input.type = 'text';
+
+      const vokabelEnglisch = document.createElement('div');
+      vokabelEnglisch.textContent = currentVokabel.englisch;
+      vokabelEnglisch.classList.add('vokabel');
+
+      vokabelContainer.innerHTML = '';
+      vokabelContainer.appendChild(vokabelDeutsch);
+      vokabelContainer.appendChild(input);
+      vokabelContainer.appendChild(vokabelEnglisch);
+    }
+
+    function test() {
+      if (currentVokabel.englisch === document.querySelector('input').value) {
+        result.textContent = 'Richtig!';
+      } else {
+        result.textContent = 'Falsch!';
+      }
+      result.style.color = 'green';
+    }
+
+    loadVokabeln().then(vokabeln => {
+      currentVokabel = vokabeln[Math.floor(Math.random() * vokabeln.length)];
+      showVokabel();
+    });
+  </script>
+</body>
+</html>
