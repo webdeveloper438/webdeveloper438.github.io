@@ -76,6 +76,7 @@
     function test() {
       if (currentVokabel.englisch === document.querySelector('input').value) {
         result.textContent = 'Richtig!';
+        location.reload(true);
       } else {
         result.textContent = 'Falsch!';
       }
