@@ -22,7 +22,6 @@
     .vokabel input {
       flex-grow: 1;
       margin-right: 10px;
-      width: 200px;
     }
     .vokabel button {
       background-color: blue;
@@ -63,6 +62,7 @@
 
       const input = document.createElement('input');
       input.type = 'text';
+      input.style.width = "500px";
 
       const vokabelEnglisch = document.createElement('div');
       vokabelEnglisch.textContent = currentVokabel.englisch;
