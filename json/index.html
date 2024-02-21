@@ -76,7 +76,15 @@
     function test() {
       if (currentVokabel.englisch === document.querySelector('input').value) {
         result.textContent = 'Richtig!';
-        location.reload(true);
+        setTimeout //create  a timer that will clear the text after 2 seconds
+        (function () {  //Blackbox  Function
+            result.textContent = ''
+          }, 2000);
+        loadVokabeln().then((newVokabel) => {
+          currentVokabel = newVokabel[Math.floor(Math.random() * newVokabel.length)];
+          console.log(currentVokabel);
+          showVokabel();
+        });
       } else {
         result.textContent = 'Falsch!';
       }
