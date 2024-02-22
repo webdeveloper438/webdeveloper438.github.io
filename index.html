@@ -159,8 +159,14 @@
           });
           result.style.color = "green";
         } else {
-          result.textContent =
-            `Falsch! Die richtige Vokabel ist: ${currentVokabel.englisch}`;
+          result.textContent = `Falsch! Die richtige Vokabel ist: ${currentVokabel.englisch}`;
+
+          setTimeout(
+            function () {
+              result.textContent = "";
+            },
+            2000
+          );
           
           result.style.color = "red";
         }
