@@ -1,7 +1,9 @@
 [
-  { "deutsch": "Hallo", "englisch": "Hello" },
-  { "deutsch": "Welt", "englisch": "World" },
-  { "deutsch": "Computer", "englisch": "Computer" },
-  { "deutsch": "Tisch", "englisch": "Table" },
-  { "deutsch": "Stuhl", "englisch": "Chair" }
+  { "deutsch": "auch nicht", "englisch": "ne ... pas non plus" },
+  { "deutsch": "Ich will nicht tanzen. Ich will auch nicht reden.", "englisch": "Je ne veux pas danser. Je ne veux pas non plus parler." },
+  { "deutsch": "schweigsam; still", "englisch": "silencieux / silecieuse" },
+  { "deutsch": "jdn. stören", "englisch": "deranger" },
+  { "deutsch": "laut", "englisch": "bruyant / bruyante" },
+  { "deutsch": "eigen", "englisch": "propre" },
+  { "deutsch": "dünn", "englisch": "mince / mince"}
 ]
