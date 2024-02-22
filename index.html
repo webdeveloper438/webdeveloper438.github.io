@@ -93,6 +93,7 @@
     <script>
       const vokabelContainer = document.getElementById("vokabel-container");
       const result = document.querySelector(".result");
+      const input = document.createElement("input");
 
       function loadVokabeln() {
         return fetch("vokabeln.json")
@@ -107,7 +108,6 @@
         vokabelDeutsch.textContent = currentVokabel.deutsch;
         vokabelDeutsch.classList.add("vokabel");
 
-        const input = document.createElement("input");
         input.type = "text";
         input.placeholder = "Übersetzung eingeben..."
         input.style.width = "400px";
