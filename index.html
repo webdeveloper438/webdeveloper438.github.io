@@ -157,11 +157,13 @@
             console.log(currentVokabel);
             showVokabel();
           });
+          result.style.color = "green";
         } else {
           result.textContent =
-            `Falsch! Die richtige Vokabel ist: ${currentVokabel.englisch}`
+            `Falsch! Die richtige Vokabel ist: ${currentVokabel.englisch}`;
+          
+          result.style.color = "red";
         }
-        result.style.color = "green";
       }
 
       loadVokabeln().then((vokabeln) => {
