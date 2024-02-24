@@ -174,7 +174,8 @@
         let inputValueLower = document
           .querySelector("input")
           .value.toLowerCase();
-        if (inputValueLower.lenght >= 1) {
+
+        if (inputValueLower.length >= 1) {
           if (currentVokabelLower === inputValueLower) {
           result.textContent = "Poprawnie!";
           setTimeout(function () {
@@ -188,16 +189,16 @@
           });
           result.style.color = "green";
           input.value = "";
-        } else {
-          result.textContent = `Źle! Poprawnie jest: ${currentVokabel.englisch}`;
+          } else {
+            result.textContent = `Źle! Poprawnie jest: ${currentVokabel.englisch}`;
 
-          setTimeout(function () {
-            result.textContent = "";
-          }, 2000);
+            setTimeout(function () {
+              result.textContent = "";
+            }, 2000);
 
-          result.style.color = "red";
-          input.value = "";
-        }
+            result.style.color = "red";
+            input.value = "";
+          }
 
         } else {
           result.textContent = "Wpisz coś!";
