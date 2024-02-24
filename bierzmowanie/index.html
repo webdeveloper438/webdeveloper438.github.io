@@ -59,7 +59,9 @@
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Test z Katechizmu Kościoła Katolickiego</a>
+        <a class="navbar-brand" href="#"
+          >Test z Katechizmu Kościoła Katolickiego</a
+        >
         <button
           class="navbar-toggler"
           type="button"
@@ -74,7 +76,12 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="https://webdeveloper438.github.io/bierzmowanie">Home</a>
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="https://webdeveloper438.github.io/bierzmowanie"
+                >Home</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="lista.json">Lista</a>
@@ -113,7 +120,7 @@
         vokabelDeutsch.classList.add("vokabel");
 
         input.type = "text";
-        input.placeholder = "Wpisz definicję"
+        input.placeholder = "Wpisz definicję";
         input.style.width = "400px";
         input.classList.add("form-control");
 
@@ -145,16 +152,28 @@
       }
 
       function test() {
-        if (currentVokabel.englisch === document.querySelector("input").value) {
+        // convert currentVokabel.englisch to lower case and replace "ł" with "l"
+        let currentVokabelLower = currentVokabel.englisch
+          .toLowerCase()
+          .replace(/ł/g, "l")
+          .replace(/ą/g, "a")
+          .replace(/ó/g, "o")
+          .replace(/ś/g, "s")
+          .replace(/ń/g, "n")
+          .replace(/ę/g, "e")
+          .replace(/ź/g, "z")
+          .replace(/ż/g, "z");
+
+        // convert input value to lower case
+        let inputValueLower = document
+          .querySelector("input")
+          .value.toLowerCase();
+
+        if (currentVokabelLower === inputValueLower) {
           result.textContent = "Poprawnie!";
-          setTimeout(
-            //create  a timer that will clear the text after 2 seconds
-            function () {
-              //Blackbox  Function
-              result.textContent = "";
-            },
-            2000
-          );
+          setTimeout(function () {
+            result.textContent = "";
+          }, 2000);
           loadVokabeln().then((newVokabel) => {
             currentVokabel =
               newVokabel[Math.floor(Math.random() * newVokabel.length)];
@@ -164,15 +183,12 @@
           result.style.color = "green";
           input.value = "";
         } else {
-          result.textContent = `Źle! Poprwanie jest: ${currentVokabel.englisch}`;
+          result.textContent = `Źle! Poprawnie jest: ${currentVokabel.englisch}`;
 
-          setTimeout(
-            function () {
-              result.textContent = "";
-            },
-            2000
-          );
-          
+          setTimeout(function () {
+            result.textContent = "";
+          }, 2000);
+
           result.style.color = "red";
           input.value = "";
         }
@@ -185,9 +201,9 @@
 
       function skip() {
         loadVokabeln().then((lista) => {
-        currentVokabel = lista[Math.floor(Math.random() * lista.length)];
-        showVokabel();
-      });
+          currentVokabel = lista[Math.floor(Math.random() * lista.length)];
+          showVokabel();
+        });
       }
     </script>
     <script
