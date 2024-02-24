@@ -162,7 +162,9 @@
           .replace(/ń/g, "n")
           .replace(/ę/g, "e")
           .replace(/ź/g, "z")
-          .replace(/ż/g, "z");
+          .replace(/ż/g, "z")
+          .replace(/./g, "")
+          .replace(/,/g, "");
 
         // convert input value to lower case
         let inputValueLower = document
