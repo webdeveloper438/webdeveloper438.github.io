@@ -95,7 +95,7 @@
       function loadVokabeln() {
         return fetch("lista.json")
           .then((response) => response.json())
-          .then((vokabeln) => vokabeln);
+          .then((lista) => lista);
       }
 
       let currentVokabel = {};
@@ -139,7 +139,7 @@
 
       function test() {
         if (currentVokabel.englisch === document.querySelector("input").value) {
-          result.textContent = "Richtig!";
+          result.textContent = "Poprawnie!";
           setTimeout(
             //create  a timer that will clear the text after 2 seconds
             function () {
@@ -157,7 +157,7 @@
           result.style.color = "green";
           input.value = "";
         } else {
-          result.textContent = `Falsch! Die richtige Vokabel ist: ${currentVokabel.englisch}`;
+          result.textContent = `Źle! Poprwanie jest: ${currentVokabel.englisch}`;
 
           setTimeout(
             function () {
@@ -171,14 +171,14 @@
         }
       }
 
-      loadVokabeln().then((vokabeln) => {
-        currentVokabel = vokabeln[Math.floor(Math.random() * vokabeln.length)];
+      loadVokabeln().then((lista) => {
+        currentVokabel = lista[Math.floor(Math.random() * lista.length)];
         showVokabel();
       });
 
       function skip() {
-        loadVokabeln().then((vokabeln) => {
-        currentVokabel = vokabeln[Math.floor(Math.random() * vokabeln.length)];
+        loadVokabeln().then((lista) => {
+        currentVokabel = lista[Math.floor(Math.random() * lista.length)];
         showVokabel();
       });
       }
