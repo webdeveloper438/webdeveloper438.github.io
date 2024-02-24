@@ -174,8 +174,8 @@
         let inputValueLower = document
           .querySelector("input")
           .value.toLowerCase();
-
-        if (currentVokabelLower === inputValueLower) {
+        if (inputValueLower.lenght >= 1) {
+          if (currentVokabelLower === inputValueLower) {
           result.textContent = "Poprawnie!";
           setTimeout(function () {
             result.textContent = "";
@@ -198,6 +198,15 @@
           result.style.color = "red";
           input.value = "";
         }
+
+        } else {
+          result.textContent = "Wpisz coś!";
+          setTimeout(function () {
+            result.textContent = "";    
+          }, 2000);
+          result.style.color= "red"
+        }
+        
       }
 
       loadVokabeln().then((lista) => {
