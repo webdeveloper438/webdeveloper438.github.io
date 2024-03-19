@@ -1,3 +1,24 @@
 [
-  { "deutsch": "", "englisch": "ne pas non plus" }
+  { "deutsch": "Trommel", "englisch": "drum" },
+  { "deutsch": "Floß", "englisch": "raft" },
+  { "deutsch": "die Götter", "englisch": "the gods"},
+  { "deutsch": "Die Götter müssen im Moment sauer auf mich sein, weil heute alles schief ging!", "englisch": "The gods must be angry with me at the moment because everything went wrong today!"},
+  { "deutsch": "Damm; Staumauer", "englisch": "dam"},
+  { "deutsch": "Ein Damm wird gebaut, um Wasser dazu zu bringen, einen See zu bilden.", "englisch": "A dam is built to make water form a lake."},
+  { "deutsch": "Strom; Elektrizität; Energie", "englisch": "power"},
+  { "deutsch": "Elektrizität ist eine Form von Energie.", "englisch": "Electricity is a form of power."},
+  { "deutsch": "Holz; Bauholz", "englisch": "timber"},
+  { "deutsch": "Holz, das für das Bauen von Häusern und Möbeln verwendet wird.", "englisch": "Wood that is used for building houses and furniture."},
+  { "deutsch": "entfernen; abreißen", "englisch": "to remove"},
+  { "deutsch": "etwas wegnehmen, was man nicht möchte", "englisch": "to take away something that you dont want"},
+  { "deutsch": "Außenwelt", "englisch": "outside world"},
+  { "deutsch": "Alles wird sich geändert haben.", "englisch": "Everything will have changed."},
+  { "deutsch": "Architektur", "englisch": "architecture"},
+  { "deutsch": "Wenn du architektur studierst, lernst du wie man Gebäude plant und ausstattet.", "englisch": "If you study architecture, you learn how to plan and design buildings."},
+  { "deutsch": "Illustrationen; Bebilderung", "englisch": "artwork"},
+  { "deutsch": "Jeder indianische Stamm hat seine eigene Art der Bebilderung.", "englisch": "Every Indian tribe has its typical artwork."},
+  { "deutsch": "Langhaus", "englisch": "longhouse"},
+  { "deutsch": "Totempfahl", "englisch": "totem pole"},
+  { "deutsch": "(da)für; zugunsten (von)", "englisch": "in favor (of)"},
+  { "deutsch": "Wenn du für etwas stimmst, bist du dafür.", "englisch": "If you vote for something, you are in favor of it."}
 ]
