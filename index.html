@@ -117,6 +117,7 @@
       <p>© 2024 <a href="https://tomiak.eu">F. Tomiak</a></p>
       <p>Dieses Projekt befindet sich in der Betaphase.</p>
       <p>Version: 2.3.5</p>
+      <button class="btn btn-secondary" onclick="refresh()">Aktualisieren</button>
     </div>
 
     <script>
@@ -222,6 +223,10 @@
             vokabeln[Math.floor(Math.random() * vokabeln.length)];
           showVokabel();
         });
+      }
+
+      function refresh() {
+        location.reload(true);
       }
     </script>
     <script
