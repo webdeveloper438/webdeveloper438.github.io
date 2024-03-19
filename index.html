@@ -70,13 +70,22 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="https://webdeveloper438.github.io">Home</a>
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="https://webdeveloper438.github.io"
+                >Home</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="vokabeln.json">Vokabelliste</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://static.tomiak.eu/docs/vokabeltrainer-dokumentation.pdf">Dokumentation</a>
+              <a
+                class="nav-link"
+                href="https://static.tomiak.eu/docs/vokabeltrainer-dokumentation.pdf"
+                >Dokumentation</a
+              >
             </li>
           </ul>
         </div>
@@ -85,7 +94,10 @@
     <div class="main-container">
       <h5>Sprache: Englisch</h5>
       <h6>Vokabeln für: 20.03.2024 | S. 160 'drum' - S. 162 'move'</h6>
-      <p>Bitte beachte: Die Vokabeln werden ohne jegliche Sonderbuchstaben abgefragt (s. Vokabelliste)</p>
+      <p>
+        Bitte beachte: Die Vokabeln werden ohne jegliche Sonderbuchstaben
+        abgefragt (s. Vokabelliste)
+      </p>
       <div id="vokabel-container"></div>
       <div class="result"></div>
       <button onclick="test()" class="btn btn-primary">Prüfen</button>
@@ -111,7 +123,7 @@
         vokabelDeutsch.classList.add("vokabel");
 
         input.type = "text";
-        input.placeholder = "Übersetzung eingeben..."
+        input.placeholder = "Übersetzung eingeben...";
         input.style.width = "400px";
         input.classList.add("form-control");
 
@@ -143,36 +155,44 @@
       }
 
       function test() {
-        if (currentVokabel.englisch === document.querySelector("input").value) {
-          result.textContent = "Richtig!";
-          setTimeout(
-            //create  a timer that will clear the text after 2 seconds
-            function () {
-              //Blackbox  Function
-              result.textContent = "";
-            },
-            2000
-          );
-          loadVokabeln().then((newVokabel) => {
-            currentVokabel =
-              newVokabel[Math.floor(Math.random() * newVokabel.length)];
-            console.log(currentVokabel);
-            showVokabel();
-          });
-          result.style.color = "green";
-          input.value = "";
-        } else {
-          result.textContent = `Falsch! Die richtige Vokabel ist: ${currentVokabel.englisch}`;
+        if (input.value >= 1) {
+          if (
+            currentVokabel.englisch === document.querySelector("input").value
+          ) {
+            result.textContent = "Richtig!";
+            setTimeout(
+              //create  a timer that will clear the text after 2 seconds
+              function () {
+                //Blackbox  Function
+                result.textContent = "";
+              },
+              2000
+            );
+            loadVokabeln().then((newVokabel) => {
+              currentVokabel =
+                newVokabel[Math.floor(Math.random() * newVokabel.length)];
+              console.log(currentVokabel);
+              showVokabel();
+            });
+            result.style.color = "green";
+            input.value = "";
+          } else {
+            result.textContent = `Falsch! Die richtige Vokabel ist: ${currentVokabel.englisch}`;
 
-          setTimeout(
-            function () {
+            setTimeout(function () {
               result.textContent = "";
-            },
-            2000
-          );
-          
+            }, 2000);
+
+            result.style.color = "red";
+            input.value = "";
+          }
+        } else {
+          result.textContent = "Bitte gebe etwas ein!";
+          setTimeout(function () {
+            result.textContent = "";
+          }, 2000);
+
           result.style.color = "red";
-          input.value = "";
         }
       }
 
@@ -183,9 +203,10 @@
 
       function skip() {
         loadVokabeln().then((vokabeln) => {
-        currentVokabel = vokabeln[Math.floor(Math.random() * vokabeln.length)];
-        showVokabel();
-      });
+          currentVokabel =
+            vokabeln[Math.floor(Math.random() * vokabeln.length)];
+          showVokabel();
+        });
       }
     </script>
     <script
