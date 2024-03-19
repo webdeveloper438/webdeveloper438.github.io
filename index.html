@@ -12,7 +12,7 @@
     />
     <style>
       .main-container {
-        margin: 10px 0 0 50px;
+        margin: 10px 50px 0 50px;
       }
 
       body {
@@ -43,6 +43,16 @@
       }
       .result {
         margin: 20px 0;
+      }
+
+      .footer {
+        margin: 20% 50px 0 50px;
+        display: flex;
+        gap: 10px;
+      }
+
+      .footer a {
+        color: black;
       }
 
       @media (screen) and (max-width: 768px) {
@@ -102,6 +112,11 @@
       <div class="result"></div>
       <button onclick="test()" class="btn btn-primary">Prüfen</button>
       <button onclick="skip()" class="btn btn-secondary">Überspringen</button>
+    </div>
+    <div class="footer">
+      <p>© 2024 <a href="https://tomiak.eu">F. Tomiak</a></p>
+      <p>Dieses Projekt befindet sich in der Betaphase.</p>
+      <p>Version: 2.3.1</p>
     </div>
 
     <script>
